@@ -1,0 +1,136 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('banner.jpg') center/cover no-repeat;
+    color: #fff;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header ul li {
+    display: inline;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+header ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.content h2 span {
+    color: #e91e63;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.content button {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.content button:hover {
+    background-color: #c2185b;
+}
+
+.daynight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.daynight ion-icon {
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+
+body.dark .banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('banner-dark.jpg') center/cover no-repeat;
+}
+
+body.dark {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark .daynight ion-icon[name="moon-outline"] {
+    display: none;
+}
+
+body.dark .daynight ion-icon[name="sunny-outline"] {
+    display: block;
+}
+
+body:not(.dark) .daynight ion-icon[name="moon-outline"]{
+    display: block;
+}
+
